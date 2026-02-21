@@ -4,15 +4,15 @@ from discord.ext import commands
 from datetime import datetime
 
 # --- EDIT THESE TWO THINGS ONLY ---
-MY_USER_ID = YOUR_USERID  
+MY_USER_ID = YOUR_USERID # Theres no need for adding quote marks  
 BOT_TOKEN = 'YOUR_BOT_TOKEN' 
 
 # --- FOOD MENU ---
 FOOD_MENU = [
     {"name": "Fried Rice", "emoji": "🍚", "desc": "Price: 15,000 Kyat"},
     {"name": "Steak", "emoji": "🥩", "desc": "Price: 25,000 Kyat"},
-    {"name": "Burger", "emoji": "🍔", "desc": "Price: 20,000 Kyat"},
-    {"name": "KFC", "emoji": "🍗", "desc": "Price: 20,000 Kyat"}
+    {"name": "Burger", "emoji": "🍔", "desc": "Price: 20,000 Kyat"}, # <---- Add a comma after each line (Each line is a new menu item in the drop down)
+    {"name": "KFC", "emoji": "🍗", "desc": "Price: 20,000 Kyat"} # <---- For the last one don't add a comma
 ]
 
 class ConfirmPayView(ui.View):
@@ -52,7 +52,7 @@ class TicketModal(ui.Modal):
 
     customer_name = ui.TextInput(label="Your Name", placeholder="Who is this for?", required=True)
     quantity = ui.TextInput(label="Quantity", placeholder="How many?", min_length=1, max_length=2, required=True)
-    where_eat = ui.TextInput(label="Where are you?", placeholder="e.g. Table 4, Room 101", required=True)
+    where_eat = ui.TextInput(label="Where are you?", placeholder="e.g. Cafeteria, Mr, Andy's Room", required=True)
     special_steps = ui.TextInput(label="Extra info?", style=discord.TextStyle.paragraph, required=False)
 
     async def on_submit(self, interaction: discord.Interaction):
